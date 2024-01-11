@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  //**
+  //??
   String userInput = '';
   String result = '0';
 
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //** media query ->
+    //*** media query ->
     final size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //?? get bgColor ->
   getBgColor(String text) {
     if (text == 'AC') {
-      return Colors.purple;
+      return Colors.purpleAccent;
     }
     if (text == '=') {
       return Colors.teal;
@@ -180,14 +180,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   //?? handle button press ->
   handleButtonPress(String text) {
-    //** for AC ->
+    //*** for AC ->
     if (text == 'AC') {
       userInput = '';
       result = '0';
       return;
     }
 
-    //** for C ->
+    //*** for C ->
     if (text == 'C') {
       if (userInput.isNotEmpty) {
         userInput = userInput.substring(0, userInput.length - 1);
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     }
 
-    //** for = ->
+    //*** for = ->
     if (text == '=') {
       result = calculate();
       userInput = result;
@@ -207,7 +207,6 @@ class _HomeScreenState extends State<HomeScreen> {
       if (result.endsWith('.0')) {
         result = result.replaceAll('.0', '');
       }
-
       return;
     }
     userInput = userInput + text;
